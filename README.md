@@ -1,22 +1,22 @@
 ## Sentiment Analysis on Demonetization Using Pig
 
-Semantic Analysis of Demonetization project has been developed for the analysis of Indian Demonetization Record.  In this project we will find out the views of different people on the demonetization by analysing the tweets from twitter and we will classify the tweets as positive or negative tweets. You can find the demonetization twitter data in data folder.
+Semantic Analysis of Demonetization project has been developed for the analysis of Indian Demonetization Record.  In this project we will find out the views of different people on the demonetization by analysing the tweets from twitter and we will classify the tweets as positive or negative tweets. You can find the demonetization twitter data in this folder.
 
 For performing whole process I will use HDFS so firstly you have to create a directory in HDFS and move the local file to the HDFS and then run the pig script file.
 
-You can find twitter as well as reting dictionary data into the data folder.
+You can find twitter as well as reting dictionary data in this folder.
 
 Follow the below steps for successfulling this project.
 
 ```
 # Create directory in HDFS to store csv and rating dictionary file
 
-$ hadoop fs -mkdir /demion_analysis
+$ hadoop fs -mkdir /demon_analysis
 
 # Move local file to the HDFS. Please replace the file path in below given query according to your local system.
 
-$ hadoop fs -copyFromLocal /home/maniram/data/demonetization-tweets.csv /demion_analysis
-$ hadoop fs -copyFromLocal /home/maniram/data/AFINN.csv /demion_analysis
+$ hadoop fs -copyFromLocal /home/ashwin/bda/demonetization-tweets.csv /demon_analysis
+$ hadoop fs -copyFromLocal /home/ashwin/bda/AFINN.txt /demon_analysis
 
 ```
 
@@ -24,7 +24,7 @@ $ hadoop fs -copyFromLocal /home/maniram/data/AFINN.csv /demion_analysis
 Now whole jobs is fine. You can execute the pig script using below given command
 
 ```
-$ pig -x mapreduce /home/maniram/demonotetization_analysis.pig
+$ pig -x mapreduce /home/ashwin/bda/demonetization_analysis.pig
 
 ```
 
@@ -33,9 +33,9 @@ You can view the content of positive and negative tweets file using below comman
 
 
 ```
-$ hadoop fs -cat /demion_anaysis/positive_tweets/*00 
+$ hadoop fs -cat /demon_anaysis/positive_tweets/*00 
 
-$ hadoop fs -cat /demion_anaysis/negative_tweets/*00 
+$ hadoop fs -cat /demon_anaysis/negative_tweets/*00 
 ```
 
 
